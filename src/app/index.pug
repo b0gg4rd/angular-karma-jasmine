@@ -1,0 +1,27 @@
+include _mixins/link
+include _mixins/script
+
+doctype html
+html(
+  lang='en',
+  ng-app='AngularKarmaJasmine',
+  ng-controller='AngularKarmaJasmineController as ctrl'
+)
+  head
+    title Angular Karma Jasmine
+    meta(charset='utf-8')
+    +link('bower_components/bootstrap/dist/css/bootstrap.min.css')
+    +link('AngularKarmaJasmineStyles.css')
+  body
+    nav.navbar.navbar-default
+      .container
+        .navbar-header
+          a.navbar-brand Angular Karma Jasmine
+    ui-view {{ ctrl.message }}
+
+    +script('bower_components/angular/angular.min.js')
+    +script('bower_components/angular-ui-router/release/angular-ui-router.min.js')
+
+    +script('AngularKarmaJasmine.js')
+    +script('AngularKarmaJasmineRoutes.js')
+    +script('AngularKarmaJasmineController.js')
